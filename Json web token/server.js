@@ -119,7 +119,7 @@ app.post("/Signup", upload.single("profilePic"), async (req, res) => {
 app.patch("/update", upload.single('profilePic'), async (req, res) => {
   // req.body will contain the parsed JSON data
   // req.file will contain the uploaded file
-
+console.log(req.body);
   try {
     if (req.body.firstName.trim().length > 0) {
       await User.updateMany({ email: req.body.email },
